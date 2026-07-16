@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sangeet Nights</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<div id="canvas-holder"></div>
+
+<button class="task-menu-btn" id="taskMenuBtn" style="display:none">
+  ☰
+  <span class="task-badge" id="taskBadge">0/5</span>
+</button>
+<div class="task-dropdown" id="taskDropdown">
+  <h2>✦ Sangeet Nights</h2>
+  <div id="currentCharLabel" style="font-size:11px;color:#ffd23f;margin:6px 0 8px;opacity:0.85;"></div>
+  <ul class="task-list" id="taskList"></ul>
+</div>
+
+<div class="hint" id="hint" style="display:none">pick up glowing items and carry them to their marked spot &middot; arrow keys to move</div>
+<div class="hint" id="actionHint" style="display:none; bottom:56px;"></div>
+<div class="chime-toast" id="chimeToast"></div>
+<button class="avatar-btn" id="avatarBtn" style="display:none" title="Change your look">🎨</button>
+
+<div class="music-bar" id="musicBar">
+  <div class="music-bar-track">🎵 <span id="djTrackName">—</span> <span id="djTimeLabel">0:00 / 0:00</span></div>
+  <div class="dj-progress"><div class="dj-progress-fill" id="djProgressFill"></div></div>
+  <div class="music-bar-note">Finish all tasks before the song ends!</div>
+</div>
+
+<div class="overlay show" id="customizeOverlay">
+  <div class="panel">
+    <h1>Sangeet Nights</h1>
+    <div class="sub">Pick your look, then wander the grounds and run five tasks.</div>
+
+    <div class="swatch-row">
+      <div class="row-label">Choose your character</div>
+      <div class="char-grid" id="modelOptions"></div>
+    </div>
+
+    <div class="sub" id="loadStatus" style="margin-top:10px;">Loading characters…</div>
+    <button class="start-btn" id="startBtn" disabled>Let's dance →</button>
+    <div style="font-size:10px;color:#8a7a9a;margin-top:12px;line-height:1.5;">
+      Music from #Uppbeat (free for Creators!):<br>
+      <a href="https://uppbeat.io/t/trinity/bombay-street" target="_blank" rel="noopener" style="color:#8a7a9a;">https://uppbeat.io/t/trinity/bombay-street</a><br>
+      License code: TV2BUIHIJNE2FS3Z
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="endOverlay">
+  <div class="panel end-card">
+    <h1>All tasks done ✦</h1>
+    <p>Five for five before the last song. The dance floor's still packed — go join it.</p>
+    <button class="start-btn" onclick="location.reload()">Run it back</button>
+  </div>
+</div>
+
+<div class="overlay" id="songEndOverlay">
+  <div class="panel end-card">
+    <h1>Song's over 🎵</h1>
+    <p id="songEndMessage">The track wrapped up before you finished.</p>
+    <button class="start-btn" id="keepDancingBtn">Queue another track & keep going</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+<script src="./models-men.js"></script>
+<script src="./models-women-1.js"></script>
+<script src="./models-women-2.js"></script>
+<script src="./game.js"></script>
+
+</body>
+</html>
