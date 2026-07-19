@@ -301,3 +301,38 @@ canvas { display: block; }
 .dj-progress { width: 100%; height: 5px; background: rgba(255,255,255,0.12); border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
 .dj-progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #ff2e88, #ffd23f); }
 .music-bar-note { font-size: 11px; color: #cbb8de; font-style: italic; }
+
+.joystick-base {
+  position: fixed;
+  left: 26px;
+  bottom: 26px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(13, 7, 22, 0.55);
+  border: 2px solid rgba(0, 229, 255, 0.35);
+  z-index: 15;
+  display: none;
+  touch-action: none;
+}
+.joystick-base.active-touch { display: block; }
+.joystick-thumb {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  margin-left: -26px;
+  margin-top: -26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff2e88, #ffd23f);
+  box-shadow: 0 0 14px rgba(255,46,136,0.5);
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  /* keep the bottom-left corner clear for the joystick */
+  .hint, .music-bar { left: auto; right: 10px; transform: none; max-width: 52vw; }
+  .joystick-base { width: 104px; height: 104px; left: 18px; bottom: 18px; }
+  .joystick-thumb { width: 46px; height: 46px; margin-left: -23px; margin-top: -23px; }
+}
