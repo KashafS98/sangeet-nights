@@ -24,8 +24,8 @@
   <ul class="task-list" id="taskList"></ul>
 </div>
 
-<div class="hint" id="hint" style="display:none">pick up glowing items and carry them to their marked spot &middot; arrow keys to move</div>
-<div class="hint" id="actionHint" style="display:none; bottom:56px;"></div>
+<button class="info-btn" id="infoBtn" style="display:none">?</button>
+<div class="info-tooltip" id="infoTooltip">Grab glowing items and deliver them to their marked spot!</div>
 <div class="chime-toast" id="chimeToast"></div>
 <button class="avatar-btn" id="avatarBtn" style="display:none" title="Change your look">🎨</button>
 
@@ -42,7 +42,19 @@
 
     <div class="swatch-row">
       <div class="row-label">Choose your character</div>
-      <div class="char-grid" id="modelOptions"></div>
+      <div class="gender-toggle">
+        <button class="gender-btn active" id="genderMaleBtn">Male</button>
+        <button class="gender-btn" id="genderFemaleBtn">Female</button>
+      </div>
+      <div class="carousel">
+        <button class="carousel-arrow" id="carouselPrevBtn">‹</button>
+        <div class="carousel-stage" id="carouselStage">
+          <div class="carousel-thumb-wrap"><img class="carousel-thumb" id="carouselThumb" alt="Character preview"></div>
+          <div class="carousel-name" id="carouselName">—</div>
+        </div>
+        <button class="carousel-arrow" id="carouselNextBtn">›</button>
+      </div>
+      <button class="carousel-select-btn" id="carouselSelectBtn">Select This Character</button>
     </div>
 
     <div class="sub" id="loadStatus" style="margin-top:10px;">Loading characters…</div>
